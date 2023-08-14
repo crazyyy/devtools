@@ -28,3 +28,8 @@ if $(wp --url=http://example.com core is-installed --network); then
 else
     wp search-replace 'http://example.com' 'http://example.test' --recurse-objects --skip-columns=guid --skip-tables=wp_users
 fi
+
+
+Write a powershell script thats:
+1. Get path to current directory to valiable $path
+2. Search in current directory file with name ".env"

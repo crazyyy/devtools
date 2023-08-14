@@ -1,0 +1,99 @@
+
+https://make.wordpress.org/cli/handbook/
+https://github.com/topics/wp-cli
+
+Although the package index will remain in place for backward compatibility reasons, it has been deprecated and will not be updated further. Please refer to https://github.com/wp-cli/ideas/issues/51 to read about its potential replacement.
+
+
++----------------------------------+---------------------------------+------------+-----------+----------------+
+| name                             | authors                         | version    | update    | update_version |
++----------------------------------+---------------------------------+------------+-----------+----------------+
+| alleyinteractive/wp-doc-command  |                                 | dev-main   | none      |                |
+| binarygary/db-checkpoint         | Gary Kovar                      | dev-master | none      |                |
+| iandunn/wp-cli-rename-db-prefix  | Ian Dunn                        | dev-master | none      |                |
+| matt/wp-installer                | Matt Shaw                       | dev-master | none      |                |
+| wp-cli/doctor-command            | Daniel Bachhuber                | dev-main   | none      |                |
+| wp-cli/package-command           | Daniel Bachhuber                | dev-main   | available | 2.x-dev        |
+| wp-cli/php-cli-tools             | Daniel Bachhuber, James Logsdon | dev-master | none      |                |
+| wp-cli/profile-command           |                                 | dev-master | available | 2.x-dev        |
+| yoast/wp-cli-faker               | Herre Groen                     | dev-master | none      |                |
++----------------------------------+---------------------------------+------------+-----------+----------------+
+
+
+10up/mu-migration	A set of WP-CLI commands to support the migration of single WordPress instances to multisite	N├нcholas Andr├й	dev-develop, dev-feature/behat-tests, dev-feature/cleanup, dev-feature/filter-process-args, 9999999-dev, dev-master
+
+JayWood/jw-wpcli-random-posts	A robust random post generator for WP CLI which supports multisite, post types, post counts, taxonomies, terms, term counts and featured images.	Jay Wood	1.1, 1.2, 1.3, 1.4, 2.0, dev-develop, dev-feature/allow-test-data-removal, dev-feature/faker, dev-master
+
+alleyinteractive/wp-doc-command	View PHPDoc of any class, method, property, or function.		9999999-dev, dev-main
+
+billerickson/wp-cli-plugin-install-missing	Install any plugins that are active but missing.		9999999-dev, dev-master
+
+binarygary/db-checkpoint	Create quick db snapshots for development purposes.	Gary Kovar	0.1.0, 0.1.1, 0.2.0, 0.2.1, 0.2.0.x-dev, dev-feature/add-functional-test, 9999999-dev, dev-master
+
+boonebgorges/wp-cli-git-helper	Git helper for wp-cli core, plugin, and theme commands	Boone B Gorges	0.1.0, 0.1.x-dev, 9999999-dev, dev-master
+
+brightoak/wp-cli-envoyer	A command to invoke a deployment via envoyer using the DEPLOY_URL environment variable		9999999-dev, dev-master
+
+buddypress/wp-cli-buddypress	WP-CLI commands for BuddyPress	Boone B Gorges	1.0.0, 1.1.0, 1.1.1, 1.5, 1.6, 1.7, 1.8, 2.0, 2.0.1, dev-dependabot/composer/rmccue/requests-1.8.0, 9999999-dev, dev-master
+
+c10b10/wp-cli-deploy	Deploys the local WordPress database or the uploads directory to a remote server using ssh.	Alex Ciobica	v1.0.0, dev-dev, 9999999-dev, dev-master
+
+ernilambar/database-command	Tool to reset WordPress database. This reset WP database but retains given administrator user account.	Nilambar Sharma	v0.1.0, v0.1.1, v0.1.2, 9999999-dev, dev-master
+
+foogile/wp-cli-mig	General migration command for WP-CLI	Stian Liknes	v0.0.0, v0.0.1, v0.0.2, 9999999-dev, dev-master
+
+iandunn/wp-cli-plugin-active-on-sites	A WP-CLI command to list all sites in a Multisite network that have activated a given plugin	Ian Dunn	9999999-dev, dev-master
+
+iandunn/wp-cli-rename-db-prefix	A WP-CLI command to rename WordPress' database prefix.	Ian Dunn	9999999-dev, dev-master
+
+itspriddle/wp-cli-tgmpa-plugin	Manage TGMPA plugins with WP-CLI	Joshua Priddle	v0.1.0, v0.1.1, v0.1.2, v0.1.3, v0.2.0, v0.3.0, 9999999-dev, dev-master, dev-refactor/wp-admin
+
+ivankruchkoff/wp-hammer	WP CLI Hammer Command to remove personally identifiable information and extra content for dev/test/stage purposes	Ivan Kruchkoff	dev-add/update-uri, 9999999-dev, dev-master
+
+jaywood/jw-wpcli-random-posts	A robust random post generator for WP CLI which supports multisite, post types, post counts, taxonomies, terms, term counts and featured images.	Jay Wood	9999999-dev
+
+lucatume/wpcli-wpbrowser-tests	Scaffold wp-browser based tests for a plugin or theme	Luca Tumedei	1.0.0, 1.0.1, 1.0.2, 1.0.3, 9999999-dev, dev-master
+
+matt/wp-installer	WP Installer CLI Command	Matt Shaw	9999999-dev, dev-master
+
+mattes/wp-cli-git-command	WordPress Git helpers, like pre-commit hooks for automatic MySQL database dumps.	Matthias Kadenbach	v1.0.0, v1.0.1, v1.0.2, 9999999-dev, dev-master
+
+mattes/wp-cli-quick-command	Quick WordPress helpers.	Matthias Kadenbach	9999999-dev, dev-master
+
+michaloo/wp-cli-environmentalize	Makes wp-config to load settings from ENV variables.	Micha┼В R─Еczka	9999999-dev, dev-master
+
+mikedance/wp-cli-favorite-plugins	WP-CLI command to grab favorited plugins from any wordpress.org account.	Michael Dance	1.1, 1.2, dev-dev, 9999999-dev, dev-master
+miya0001/wp-cli-plugins-api	WP-CLI command for Plugins API	Takayuki Miyauchi	1.0, 1.0.1, 9999999-dev, dev-master
+miya0001/wp-cli-vhosts	Manage multiple WordPress sites in the server.	Takayuki Miyauchi	1.0.0, 1.1.0, 1.2.0, 1.4.0, 1.4.1, 9999999-dev, dev-master, dev-stable
+nikschavan/revslider-search-replace	WP CLI Command to Search Replace Strings in revolution slider		9999999-dev, dev-master
+ocean90/wp-cli-flush-cache	Clear the cache of a user or a site.		9999999-dev, dev-master
+oderland/wp-cli-oderland	Manage Databases and Domains for Oderland Hosting Services	Package Maintainer	9999999-dev, dev-master, dev-new, dev-new2
+pantheon-systems/wp_launch_check	Check against a WordPress for performance and security		v0.6.0, v0.6.1, v0.6.2, v0.6.3, v0.6.5, v0.6.6, v0.6.7, v0.6.8, 0.6.x-dev, dev-add-license-1, dev-fix_travis, dev-fix_utils_typo, 9999999-dev, dev-master, dev-readme-object-cache, dev-travis, dev-use_wpcli_to_sanitize
+petenelson/wp-cli-size	Database and table sizes command for WP-CLI	Pete Nelson	dev-feature/media-size, 9999999-dev, dev-master
+pixline/wp-cli-proxy	wp-cli debug proxy setup (mitmproxy.org)	Paolo Tresso	0.1.3, 9999999-dev, dev-master
+pulsestorm/wp-static-html-output-plugin	Unofficial WP-CLI wrapper for the WP Static HTML Output Plugin 	Alan Storm	dev-alanstorm-dot-com, 9999999-dev, dev-master
+redkiwi-nl/localconfig			0.1, 0.2.1, 0.2.2, 0.3, 0.3.1, 9999999-dev, dev-master
+runcommand/assign-featured-images	Assign featured images to posts that support thumbnails.	Daniel Bachhuber	9999999-dev, dev-master
+runcommand/db-ack	Find a specific string in the database.	Daniel Bachhuber	9999999-dev, dev-master
+runcommand/find-unused-themes	Find unused themes on a multisite network.	Daniel Bachhuber	9999999-dev, dev-master
+runcommand/hook	List callbacks registered to a given action or filter.	Daniel Bachhuber	9999999-dev, dev-master
+runcommand/manifest	See what's going on inside of WordPress.		dev-active-plugins, 9999999-dev, dev-master
+runcommand/media-sideload	Sideload embedded images, and update post content references.	Daniel Bachhuber	9999999-dev, dev-master
+runcommand/media-sizes	List media sizes registered with WordPress.		9999999-dev, dev-master
+runcommand/precache	Proactively download and cache core, theme, and plugin files for later installation.	Daniel Bachhuber	9999999-dev, dev-master
+runcommand/query-debug	Find the query causing your performance issues.	Daniel Bachhuber	9999999-dev, dev-master
+runcommand/user-reset-password	Reset passwords for one or more WordPress users.	Daniel Bachhuber	v0.1.0, 9999999-dev, dev-master
+rxnlabs/wp-composer-dependencies	Manage your WordPress dependencies using the power of Composer, WP-CLI, and http://wpackagist.org/	De'Yont├й W.	dev-dev, 9999999-dev, dev-master
+sebastiaandegeus/wp-cli-salts-command	Manage salts for your WordPress installation		9999999-dev, dev-master
+shifter/cli	WP-CLI commands for the Shifter	Shifter Team	0.1.0, 0.1.1, 1.0.1, 1.0.2, 1.1.0, 1.2.0, 1.2.1, 1.2.2, 1.3.0, 1.4.0, 1.5.0, 1.5.1, 1.6.0, 1.7.0, 1.8.0, v1.8.1, dev-add-generate-command, dev-allow-to-exec-on-staging, dev-feature/new-api/archive, 9999999-dev, dev-master, dev-renovate/configure, dev-stable
+szepeviktor/wp-cli-database-prefix-command	Perform operations on prefixed database tables.	Viktor Sz├йpe	9999999-dev, dev-master
+tillkruss/wp-cli-kraken	WP-CLI command to optimize WordPress image attachments using the Kraken Image Optimizer.	Till Kr├╝ss	9999999-dev, dev-master
+timhysniu/wp-cli-template	Find, list and update templates for WP-CLI	Tim Hysniu	9999999-dev, dev-master
+timhysniu/wp-dbdelta	Database change management for WP-CLI	Tim Hysniu	9999999-dev, dev-master
+trepmal/blog-extractor	Extract a single blog from a multisite	Kailey Lampert	1.x-dev, dev-master
+vccw-team/wp-cli-scaffold-movefile	Get informations as YAML format for Wordmove's Movefile from WordPress	Takayuki Miyauchi	1.1.2, 1.2.0, 1.3.0, 1.4.0, 1.4.1, 1.4.2, 1.4.3, 1.4.4, 1.5.0, 1.6.0, 1.7.0, 1.8.1, 1.9.0, 9999999-dev, dev-master
+vccw/scaffold-vccw			1.0.0, 1.0.1, 1.1.0, 1.1.1, 1.2.0, 1.3.0, 1.4.0, 9999999-dev, dev-master, dev-stable
+viewone/wp-cli-environment	Environment package for wp-cli	Piotr Kierzniewski	0.1.0, 0.2.0, dev-develop, 9999999-dev, dev-master
+welaika/wp-cli-db2utf8			9999999-dev, dev-master
+wp-cli/restful	Unlock the potential of the WP REST API at the command line	Daniel Bachhuber	v0.1.0, v0.2.0, v0.3.0, dev-dependabot/composer/behat/behat-approx-3.10, 1.x-dev, dev-master, dev-regenerate-readme
+wp-media/wp-rocket-cli	Add a `wp rocket` command to support the WP Rocket plugin	Jonathan Buttigieg (WP Rocket Team)	1.0, v1.1.1, v1.1.2, v1.2, v1.3, dev-develop, 9999999-dev, dev-trunk

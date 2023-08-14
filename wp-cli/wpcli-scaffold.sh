@@ -10,6 +10,5 @@ wp scaffold plugin $(WPCLI_PLUGIN_FOLDER) --plugin_name=$(WPCLI_PLUGIN_NAME) --p
 
 
 
-
 # Create a Custom Post Type:
 wp scaffold post-type books --label=Book --textdomain=wpcli-demo-plugin --dashicon=dashicons-book-alt --plugin=wpcli-demo-plugin

@@ -1,0 +1,101 @@
+
+==================
+Напиши мені будь ласка bash скрипт який за допомогою wp-cli буде робити міграцію вибраних таблиць БД WordPress (список таблиць я дам нижче) з бази даних сайту "А" в базу даних сайту "Б"
+Скрипт має мати наступні опції:
+1. Повна міграція БД 
+a). Для цього на сайті А виконується наступний скрипт експорту Бази Данних, поруч з .sql файлом зберегти лог-файл процесу експорту
+```sh
+cd /home/site-a.com/public_html
+wp db export /tmp/exported-site-a/db-export-2023-07-17-183611.sql --add-drop-table --allow-root 
+Перед експортуванням БД потрібно перевірити чи є мінімум 1 Гб вільного місця в місці для зберігання файла експорту 
+Заміни в назві "2023-07-17" на сьогоднішню дату у форматі Рік-Місяць-День, а "183611" на час у форматі ГодинаХвилинаСекунда
+```
+b).На сайті Б виконується бекап існуючої бази, перед цим перевірити чи є мінімум 1 Гб вільного місця в місці для зберігання файла бекапу 
+```sh
+cd /home/site-b.com/public_html
+wp db export /tmp/migration-site-b/db-export-2023-07-17-183611.sql --add-drop-table --allow-root 
+```
+Заміни в назві "2023-07-17" на сьогоднішню дату у форматі Рік-Місяць-День, а "183611" на час у форматі ГодинаХвилинаСекунда
+c). після цього робиться спроба імпортувати базу даних сайта A в сайт Б, поруч з .sql файлом зберегти лог-файл процесу експорту
+Якщо є така можливість - перевірити чи для зберігання БД Mysql є мінімум 1 Гб вільного місця 
+```
+wp db import /tmp/exported-site-a/db-export-2023-07-17-183611.sql --allow-root 
+```
+d). Наступним кроком потрібно замінити в базі домен АПІ та домен Фронт-Енд частини Сайта А, на домен АПІ та Фронт-Енд Сайта Б, для цього 
+```
+wp search-replace '2022-api.artkai.dev' '2022-api.demo.artkai.dev' --allow-root
+wp search-replace '2022.artkai.dev' '2022.demo.artkai.dev' --allow-root
+```
+e). Наступним кроком потрібно деактивувати непотрібні плагіни 
+```
+wp plugin deactivate debug-bar
+wp plugin deactivate query-monitor
+wp plugin deactivate performance-lab
+wp plugin deactivate revisr
+wp plugin deactivate simple-history
+wp plugin deactivate wp-migrate-db
+```
+Та активувати потрібні 
+```
+wp plugin activate easy-wp-smtp
+wp plugin activate redis-cache
+wp plugin activate webp-express
+wp plugin activate wp-rest-cache
+wp plugin activate ewww-image-optimizer
+```
+Перед активацією чи деактивацією зроби перевірку чи плагін встановлений та активний за допомогою наступних команд 
+```
+wp plugin is-active hello
+wp plugin is-installed hello
+```
+f). Далі потрібно очистити кеші
+```
+wp transient delete --expired
+wp rewrite flush
+wp wp-rest-cache flush
+wp redis update-dropin
+wp redis enable
+wp cache flush
+```
+
+2. Часткова міграція БД з записами і налаштуваннями
+на основі скрипта написаного в пункті 1 зробити або новий скрипт або розширити попередній 
+і додати можливість робити тільки перенесення окремих таблиць з записами та налаштуваннями з сайту А на сайт Б
+для цього за допомогою наступного приклада експорту вибраних таблиць 
+```
+wp db export --tables=wp_options /tmp/exported-site-a/tables/table-wp_options-export-2023-07-17-183611.sql --add-drop-table --allow-root 
+wp db export --tables=wp_users /tmp/exported-site-a/tables/table-wp_users-export-2023-07-17-183611.sql --add-drop-table --allow-root 
+``` 
+модифікуй пункт a) скрипта 1 і експортуй тільки вибрані таблиці на Сайтові А, а саме таблиці (все що починається з # - це коментар); 
+```txt
+## WP Core 
+### Main Config
+wp_n3d201z_options
+### Post, Pages, CPT and taxonomies
+wp_n3d201z_posts
+wp_n3d201z_postmeta
+wp_n3d201z_terms
+wp_n3d201z_termmeta
+wp_n3d201z_term_taxonomy
+wp_n3d201z_term_relationships
+## Plugin wordpress-seo
+wp_n3d201z_yoast_indexable
+wp_n3d201z_yoast_indexable_hierarchy
+wp_n3d201z_yoast_migrations
+wp_n3d201z_yoast_primary_term
+wp_n3d201z_yoast_seo_links
+## Plugin ewww-image-optimizer
+wp_n3d201z_ewwwio_images
+wp_n3d201z_ewwwio_queue
+```
+
+а в пункті c) Скрипта 1 зміни імпорт всієї бази на імпорт тільки таблиць які присутні в папці 
+/tmp/exported-site-a/tables/
+
+
+Всі виконнання wp-cli виконувати з ключем "--allow-root"
+Винеси всі необхідні данні в змінні на початок скрипта - назву сайта а, сайта б, кореневі директорії сайту а і сайту Б, місце збереження бази чи таблиць для експорту, імпорту та бекапу, адреси доменів АПІ та доменів Фронт-Енд частини Сайту А та Сайту Б
+Розділи процес експорту та імпорту в окремі функції задля збереження можливості робити експорт та імпорт на різних серверах 
+
+додай всі необхідні перевірки на помилки, додай коментарі та можливо опис. Пиши все англійською мовою. 
+Якщо маєш якісь пропозиції покращення - надавай їх. Не забувай все детально записувати в лог
